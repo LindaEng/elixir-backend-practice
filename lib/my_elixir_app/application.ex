@@ -5,6 +5,8 @@ defmodule MyElixirApp.Application do
 
   use Application
 
+  import Supervisor
+
   @impl true
   def start(_type, _args) do
     children = [
@@ -15,7 +17,7 @@ defmodule MyElixirApp.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: MyElixirApp.PubSub},
       # Start the Endpoint (http/https)
-      MyElixirAppWeb.Endpoint
+      MyElixirAppWeb.Endpoint,
       # Start a worker by calling: MyElixirApp.Worker.start_link(arg)
       # {MyElixirApp.Worker, arg}
     ]

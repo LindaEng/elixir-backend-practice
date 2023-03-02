@@ -8,6 +8,7 @@ defmodule MyElixirApp.Repo.Migrations.CreateUsersTable do
       add :age, :integer
 
       timestamps()
+
     end
   end
 end

@@ -1,11 +1,10 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     MyElixirApp.Repo.insert!(%MyElixirApp.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+alias MyElixirApp.{Repo, User}
+
+users = [
+  %{name: "John", email: "john@example.com", age: 30},
+  %{name: "Jane", email: "jane@example.com", age: 25},
+  %{name: "Bob", email: "bob@example.com", age: 40}
+]
+
+Repo.insert_all(User, users)
+
